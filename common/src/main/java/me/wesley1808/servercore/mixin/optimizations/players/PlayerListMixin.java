@@ -46,7 +46,7 @@ public class PlayerListMixin {
             @Local(ordinal = 1) ServerLevel level
     ) {
         if (playerData.isEmpty()) {
-            player.fudgeSpawnLocation(level);
+            player.moveTo(player.adjustSpawnLocation(level, level.getSharedSpawnPos()), 0.0F, 0.0F);
         }
     }
 
